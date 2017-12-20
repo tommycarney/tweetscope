@@ -5,11 +5,11 @@
   <%= @keyword.word %>
 </p>
 
-<h2>Latest Tweets</h2>
+<h2>Latest Tweets (<%= @keyword.tweets.count %>)</h2>
 
 <ul>
-  <% @keyword.grab_tweets.each do |tweet| %>
-    <li><%= tweet %></li>
+  <% @keyword.tweets.each do |tweet| %>
+    <li><%= tweet.user_screen_name %>: <%= tweet.text %></li>
   <% end %>
 </ul>
 
